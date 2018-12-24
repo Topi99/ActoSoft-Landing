@@ -1,0 +1,187 @@
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html, body {
+  font-family: 'Thasadith', sans-serif;
+  color: rgb(19, 19, 19);
+}
+
+header {
+  position: relative;
+}
+
+aside {
+  background-color: #fff;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding-right: 40px;
+  border-radius: 0% 50% 350% 0%;
+  perspective: 800;
+  transition: all 650ms cubic-bezier(0.9, 0, 0.33, 1);
+  box-shadow: 2px 0px 2px rgba(0,0,0,.2); 
+}
+
+aside.open {
+  border-radius: 0% 1% 1% 0%;
+}
+
+nav {
+  transform: translateX(-700%);
+  opacity: 0;
+  position: relative;
+  transition: all 650ms cubic-bezier(0.9, 0, 0.33, 1);
+  text-align: right;
+  right: 0;
+  top: 15%;
+  right: 5%;
+}
+
+nav ul li {
+  padding-top: 10px;
+  list-style: none;
+}
+
+nav ul li a {
+  font-size: 3em;
+  font-weight: bold;
+  color: currentColor;
+  text-decoration: none;
+}
+
+aside.open nav {
+  transform: none;
+  opacity: 1;
+}
+
+section.nav-icon {
+  position: relative;
+  top: 40%;
+  right: -30%;
+  width: 40px;
+  cursor: pointer;
+  height: 5vh;
+  z-index: 100;
+  transition: all 650ms cubic-bezier(0.9, 0, 0.33, 1);
+}
+
+aside.open .nav-icon {
+  top: 10%;
+  right: -85%;
+}
+
+span.nav-icon--top, span.nav-icon--mid, span.nav-icon--bot {
+  width: 100%;
+  height: 1vh;
+  position: absolute;
+  background-color: #4AB5A5;
+  transform: rotate(0);
+  box-shadow: 2px 2px 2px rgba(0,0,0,.2);
+  transition: all 650ms;
+  border-radius: 3px;
+}
+
+.nav-icon--mid {
+  top: 2vh;
+}
+
+.nav-icon--bot {
+  top: 4vh;
+}
+
+aside.open .nav-icon--top {
+  transform: rotate(45deg);
+}
+
+aside.open .nav-icon--mid {
+  top: 0vh;
+  transform: rotate(-45deg);
+}
+
+aside.open .nav-icon--bot {
+  top: 2vh;
+  height: 0;
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to higher resolution desktops
+*/
+
+@media (min-width: 1025px)  {
+  header {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(219, 84, 84);
+  }
+
+  aside {
+    height: 100vh;
+    width: 20px;
+  }
+
+  aside.open {
+    width: 30vw;
+  }
+
+  .header--bg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: 0;
+    filter: brightness(.6);
+  }
+
+  .header--title {
+    position: relative;
+    top: 10%;
+    left: 20%;
+    color: white;
+    z-index: 10;
+    font-size: 6em;
+    width: 30vw;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+}
